@@ -2,11 +2,21 @@ var timeToday = new Date();
 var getMinutes = timeToday.getMinutes();
 var getHour = timeToday.getHours();
 var getSeconds = timeToday.getSeconds();
-var addZero = "0";
+//var addZero = "0";
 
-timeToday = getHour + ":" + getMinutes + ":" + getSeconds;
+function callTime(){
 
-console.log(timeToday);
+    timeToday = getHour + ":" + getMinutes + ":" + getSeconds;
+    console.log(timeToday);
+}
+
+setInterval(callTime, 1000);
+
+
+
+
+
+document.write(timeToday);
 
 
 /*
