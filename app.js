@@ -18,8 +18,10 @@ function callTimeDate(){
     //adding zero to seconds
     if (showSeconds < 10) {
         showSeconds = "0" + showSeconds;
+        console.log("Seconds, if statement hit")
     } else {
-        showSeconds
+        showSeconds;
+        console.log("Seconds, else statement hit")
     }
 
     document.getElementById("time").innerHTML = showTime;
@@ -31,10 +33,10 @@ function callTimeDate(){
 
 
 
-/* Work on later - Convert 12 hour format to 24
+/*Work on later - Convert 12 hour format to 24
 
 //convert hours from 24 to 12
-showHours = (hours % 12) || 12;
+showHours = (showHours % 12) || 12;
 
 //display 12 when 24%12
     if (showHours % 12) {
