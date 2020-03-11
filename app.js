@@ -8,24 +8,18 @@ function callTimeDate(){
     var showSeconds = timeDateToday.getSeconds();
     var showTime = showHours + ":" + showMinutes + ":" + showSeconds;
 
-    //Hours convert to military
-    if (showHours % 12) {
-        showHours = showHours;
-    } else {
-        showHours = 12;
-    }
     //adding zero to minutes
     if (showMinutes < 10) {
         showMinutes = "0" + showMinutes;
     } else {
-        //showMinutes;
+        showMinutes;
     }
 
     //adding zero to seconds
     if (showSeconds < 10) {
         showSeconds = "0" + showSeconds;
     } else {
-        
+        showSeconds
     }
 
     document.getElementById("time").innerHTML = showTime;
@@ -34,3 +28,18 @@ function callTimeDate(){
 }
 
 
+
+
+
+/* Work on later - Convert 12 hour format to 24
+
+//convert hours from 24 to 12
+showHours = (hours % 12) || 12;
+
+//display 12 when 24%12
+    if (showHours % 12) {
+        showHours = showHours % 12;
+    } else {
+        showHours = 12;
+    }
+*/
