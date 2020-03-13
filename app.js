@@ -6,8 +6,7 @@ function callTimeDate(){
     var showHours = timeDateToday.getHours();
     var showMinutes = timeDateToday.getMinutes();
     var showSeconds = timeDateToday.getSeconds();
-    var showTime = showHours + ":" + showMinutes + ":" + showSeconds;
-
+    
     //adding zero to minutes
     if (showMinutes < 10) {
         showMinutes = "0" + showMinutes;
@@ -18,13 +17,11 @@ function callTimeDate(){
     //adding zero to seconds
     if (showSeconds < 10) {
         showSeconds = "0" + showSeconds;
-        console.log("Seconds, if statement hit")
     } else {
         showSeconds;
-        console.log("Seconds, else statement hit")
     }
 
-    document.getElementById("time").innerHTML = showTime;
+    document.getElementById("time").innerHTML = showHours + ":" + showMinutes + ":" + showSeconds;;
     //document.getElementById("date").innerHTML = showDate;
 
 }
