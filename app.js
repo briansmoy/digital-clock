@@ -1,16 +1,20 @@
-var interval = setInterval(callTimeDate, 1000);
+//var interval = setInterval(callTwelveTime, 1000);
 //var changeTimeButton = document.getElementById("button");
 
-/* if statement for onclick
-
-if onclick = true{
-    setInterval(callTimeDate)
-}else{
-    figure out later
+//Functions for onClick button
+function onClick12Hour(){
+    //clearInterval(interval, 1000);
+    setInterval(callTwelveTime, 1000);
+    console.log("12 hour button");
 }
 
-/* function for 12 hour clock*/
+function onClick24Hour(){
+    //clearInterval(interval, 1000);
+    setInterval(callTimeDate, 1000);
+    console.log("24 hour button");
+}
 
+//12 hour clock function
 function callTwelveTime() {
     var timeTwelveToday = new Date();
     var getTwelveHours = timeTwelveToday.getHours();
@@ -41,7 +45,7 @@ function callTwelveTime() {
 
     document.getElementById("time").innerHTML = getTwelveHours + ":" + getTwelveMinutes + ":" + getTwelveSeconds;
 }
-
+//24 hour clock function
 function callTimeDate(){
     var timeDateToday = new Date();
     var showHours = timeDateToday.getHours();
