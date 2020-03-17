@@ -1,4 +1,4 @@
-//var interval = setInterval(callTwelveTime, 1000);
+var interval = setInterval(callTwelveTime, 1000);
 //var changeTimeButton = document.getElementById("button");
 
 //Functions for onClick button
@@ -21,7 +21,7 @@ function callTwelveTime() {
     var getTwelveMinutes = timeTwelveToday.getMinutes();
     var getTwelveSeconds = timeTwelveToday.getSeconds();
 
-    //convert hours from 24 to 12
+    //show 12 when after 24 hour mark
     getTwelveHours = (getTwelveHours % 12) || 12;
 
     //display 12 when 24%12
