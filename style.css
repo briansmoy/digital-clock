@@ -1,0 +1,32 @@
+body{
+  background: black 
+}
+
+p.time{
+ color: white;
+ font-size: 60px;
+ width: 190px;
+ margin-left: 120px;
+ margin-bottom: 0px;
+}
+
+p.date{
+  color: white;
+  font-size: 30px;
+  margin-left: 135px;
+  margin-top: 10px;
+}
+
+button{  
+  margin-left: 100px;
+  background-color: darkslategrey;
+  color: white;
+}
+
+button:active{
+  background-color: white;
+  color: black
+}
+
+
+

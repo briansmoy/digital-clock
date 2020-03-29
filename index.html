@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12/24 Hour Digital Clock</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <p id="time"></p>
-    <p id="date"></p>
     <script src="app.js"></script>
-    <button id="24button" type="button" onclick="onClick12Hour();">12 hour</button>
-    <button id="24button" type="button" onclick="onClick24Hour();">24 hour</button>
-
+    <div class="clock-display"></div> 
+     <p class="time" id="time"></p>
+      <p class="date" id="date"></p>
+    <div class="button-display"></div>
+     <button id="12button" type="button" onclick="onClick12Hour();">12 hour</button>
+     <button id="24button" type="button" onclick="onClick24Hour();">24 hour</button>
 </body>
 </html>

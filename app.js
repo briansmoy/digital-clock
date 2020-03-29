@@ -1,17 +1,16 @@
-var interval = setInterval(callTwelveTime, 1000);
-//var changeTimeButton = document.getElementById("button");
+var interval = setInterval(callTwelveTime);
 
 //Functions for onClick button
 function onClick12Hour(){
-    //clearInterval(interval, 1000);
-    setInterval(callTwelveTime, 1000);
-    console.log("12 hour button");
+    clearInterval(interval);
+    callTwelveTime;
+    interval = setInterval(callTwelveTime);
 }
 
 function onClick24Hour(){
-    //clearInterval(interval, 1000);
-    setInterval(callTimeDate, 1000);
-    console.log("24 hour button");
+    clearInterval(interval);
+    callTwentyFourTime;
+    interval = setInterval(callTwentyFourTime);
 }
 
 //12 hour clock function
@@ -20,6 +19,9 @@ function callTwelveTime() {
     var getTwelveHours = timeTwelveToday.getHours();
     var getTwelveMinutes = timeTwelveToday.getMinutes();
     var getTwelveSeconds = timeTwelveToday.getSeconds();
+    var getDD = timeTwelveToday.getDate();
+    var getMM = timeTwelveToday.getMonth();
+    var getYYYY = timeTwelveToday.getFullYear();
 
     //show 12 when after 24 hour mark
     getTwelveHours = (getTwelveHours % 12) || 12;
@@ -43,15 +45,20 @@ function callTwelveTime() {
 
     }
 
+    document.getElementById("date").innerHTML = getMM + " / " + getDD + " / " + getYYYY;
     document.getElementById("time").innerHTML = getTwelveHours + ":" + getTwelveMinutes + ":" + getTwelveSeconds;
+
 }
 //24 hour clock function
-function callTimeDate(){
+function callTwentyFourTime(){
     var timeDateToday = new Date();
     var showHours = timeDateToday.getHours();
     var showMinutes = timeDateToday.getMinutes();
     var showSeconds = timeDateToday.getSeconds();
-    
+    var getDD = timeDateToday.getDate();
+    var getMM = timeDateToday.getMonth();
+    var getYYYY = timeDateToday.getFullYear();
+
     //adding zero to minutes
     if (showMinutes < 10) {
         showMinutes = "0" + showMinutes;
@@ -65,8 +72,7 @@ function callTimeDate(){
     } else {
         showSeconds;
     }
-
-    document.getElementById("time").innerHTML = showHours + ":" + showMinutes + ":" + showSeconds;;
-    //document.getElementById("date").innerHTML = showDate;
-
+    document.getElementById("date").innerHTML = getMM + " / " + getDD + " / " + getYYYY;
+    document.getElementById("time").innerHTML = showHours + ":" + showMinutes + ":" + showSeconds;
 }
+
