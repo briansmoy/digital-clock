@@ -1,78 +1,50 @@
-var interval = setInterval(callTwelveTime);
+let interval = setInterval(displayTime);
+let isMilitaryTime = false;
 
-//Functions for onClick button
-function onClick12Hour(){
-    clearInterval(interval);
-    callTwelveTime;
-    interval = setInterval(callTwelveTime);
+window.onload = function(){
+const toggleButton = document.getElementById("toggle-time");
+toggleButton.addEventListener('click', function(e){
+    isMilitaryTime = !isMilitaryTime;
+});
 }
 
-function onClick24Hour(){
-    clearInterval(interval);
-    callTwentyFourTime;
-    interval = setInterval(callTwentyFourTime);
-}
+function displayTime() {
+    var newDate = new Date();
+    var hours = newDate.getHours();
+    var minutes = newDate.getMinutes();
+    var seconds = newDate.getSeconds();
+    var getDD = newDate.getDate();
+    var getMM = newDate.getMonth();
+    var getYYYY = newDate.getFullYear();
 
-//12 hour clock function
-function callTwelveTime() {
-    var timeTwelveToday = new Date();
-    var getTwelveHours = timeTwelveToday.getHours();
-    var getTwelveMinutes = timeTwelveToday.getMinutes();
-    var getTwelveSeconds = timeTwelveToday.getSeconds();
-    var getDD = timeTwelveToday.getDate();
-    var getMM = timeTwelveToday.getMonth();
-    var getYYYY = timeTwelveToday.getFullYear();
+    if(isMilitaryTime === true){
+        //set variables to 24 hour time
+    }else{
+        //set varibales to 12 hour time
+        hours = (hours % 12) || 12;
 
-    //show 12 when after 24 hour mark
-    getTwelveHours = (getTwelveHours % 12) || 12;
-
-    //display 12 when 24%12
-    if (getTwelveHours % 12) {
-        getTwelveHours = getTwelveHours % 12;
-    } else {
-        getTwelveHours = 12;
+        //display 12 when 24%12
+        if (hours % 12) {
+            hours = hours % 12;
+        } else {
+            hours = 12;
+        }
     }
-
-    if(getTwelveMinutes < 10) {
-        getTwelveMinutes = "0" + getTwelveMinutes;
+    
+    if(minutes < 10) {
+        minutes = "0" + minutes;
     }else{
 
     }
 
-    if(getTwelveSeconds < 10) {
-        getTwelveSeconds = "0" + getTwelveSeconds;
+    if(seconds < 10) {
+        seconds = "0" + seconds;
     }else{
 
     }
 
-    document.getElementById("date").innerHTML = getMM + " / " + getDD + " / " + getYYYY;
-    document.getElementById("time").innerHTML = getTwelveHours + ":" + getTwelveMinutes + ":" + getTwelveSeconds;
-
+    document.getElementById("date").innerHTML = 
+        getMM + " / " + getDD + " / " + getYYYY;
+    document.getElementById("time").innerHTML = 
+        hours + ":" + minutes + ":" + seconds;
 }
-//24 hour clock function
-function callTwentyFourTime(){
-    var timeDateToday = new Date();
-    var showHours = timeDateToday.getHours();
-    var showMinutes = timeDateToday.getMinutes();
-    var showSeconds = timeDateToday.getSeconds();
-    var getDD = timeDateToday.getDate();
-    var getMM = timeDateToday.getMonth();
-    var getYYYY = timeDateToday.getFullYear();
-
-    //adding zero to minutes
-    if (showMinutes < 10) {
-        showMinutes = "0" + showMinutes;
-    } else {
-        showMinutes;
-    }
-
-    //adding zero to seconds
-    if (showSeconds < 10) {
-        showSeconds = "0" + showSeconds;
-    } else {
-        showSeconds;
-    }
-    document.getElementById("date").innerHTML = getMM + " / " + getDD + " / " + getYYYY;
-    document.getElementById("time").innerHTML = showHours + ":" + showMinutes + ":" + showSeconds;
-}
-
